@@ -1,6 +1,7 @@
 // base_moving.scad - Moving base of arm
 
-base_moving(100/100, 50/100, 21/100);
+size_per = 1/100;
+base_moving(100*size_per, 50*size_per, 21*size_per);
 
 // The $fn parameter will influence all objects inside this module
 // It can, optionally, be overridden when instantiating the module
@@ -8,7 +9,7 @@ module base_moving(size=50, height=20, tx, $fn=100) {
     // Temporary variables
     hole = size*0.8;
     cutCylinderHeight = size;
-    hole_z = tx + (hole/2) + 15/100;
+    hole_z = tx + (hole/2) + 15*size_per;
     // One positive object (sphere) and three negative objects (cylinders)
     
     difference() {
